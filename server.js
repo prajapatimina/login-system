@@ -6,15 +6,16 @@ require('./database/mongoose');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
+
+
+const userRoutes = require('./routes/user.route')
+app.use('/user',userRoutes)
+
 app.get('/',(req,res)=>{
     res.json({
         message:'Welcome'
     })
 })
-
-const userRoutes = require('./routes/user.route')
-app.use('/user',userRoutes)
-
 app.use((req,res,next)=>{
     const error = new Error('route not found')
     error.status = 404;
