@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 require('./database/mongoose');
+var cors = require('cors')
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.set('view engine', 'ejs');
+
+app.use(cors());
 
 const userRoutes = require('./routes/user.route')
 app.use('/user',userRoutes)
