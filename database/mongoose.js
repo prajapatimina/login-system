@@ -4,8 +4,8 @@ mongoose.Promise= global.Promise
 console.log(process.env.MONGO_URI)
 
 mongoose.connect(
-    process.env.MONGO_URI ||
-    "mongodb+srv://admin:admin123@cluster0.uz1e9.mongodb.net/login?retryWrites=true&w=majority",
+    process.env.MONGO_URI ,
+    
     {
         useNewUrlParser:true,
         useUnifiedTopology:true
