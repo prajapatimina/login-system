@@ -49,7 +49,7 @@ exports.userLogin = async(req,res,next)=>{
             });
         }
         let userPassword = await bcrypt.compare(req.body.password,name[0].password)
-
+        console.log("log___",JWT_KEY)
         if(userPassword){
             const token= jwt.sign({
                 username:name[0].username,
