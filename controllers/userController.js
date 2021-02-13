@@ -55,7 +55,8 @@ exports.userLogin = async(req,res,next)=>{
                 username:name[0].username,
                 userId:name[0]._id
             },
-            process.env.JWT_KEY,
+            // process.env.JWT_KEY,
+            "secret",
             {
                 expiresIn: "1h"
             }
