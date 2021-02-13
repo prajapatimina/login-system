@@ -70,6 +70,8 @@ exports.userLogin = async(req,res,next)=>{
             })
         }
     } catch (error) {
+        console.log(error)
+
         return res.status(400).json({
             message:'Auth fail',
             error
