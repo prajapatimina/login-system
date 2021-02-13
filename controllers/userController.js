@@ -45,7 +45,7 @@ exports.userLogin = async(req,res,next)=>{
         let name = await User.find({username : req.body.username})
         if(name.length<1){
             return res.status(401).json({
-                message : 'Invalid Username'
+                message : 'Invalid Username or Password.'
             });
         }
         let userPassword = await bcrypt.compare(req.body.password,name[0].password)
@@ -67,7 +67,7 @@ exports.userLogin = async(req,res,next)=>{
             })
         }else{
             return res.status(400).json({
-                message : 'Invalid password'
+                message : 'Invalid Username or Password.'
             })
         }
     } catch (error) {
