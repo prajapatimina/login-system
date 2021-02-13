@@ -7,6 +7,16 @@
        
       
       
+    },
+    "production":{
+        
+        "MONGO_URI": "mongodb+srv://admin:admin123@cluster0.uz1e9.mongodb.net/login?retryWrites=true&w=majority",
+        "JWT_KEY": "secret"
+
+       
+      
+      
     }
+    
     
 }

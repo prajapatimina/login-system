@@ -17,3 +17,6 @@ else if(env === "production"){
         process.env[key]=envConfig[key]
     })
 }
+else{
+    console.log("here")
+}
